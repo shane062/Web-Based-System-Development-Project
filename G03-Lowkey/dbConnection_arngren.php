@@ -99,6 +99,7 @@
 
 		if (mysqli_query($conn, $sql))
 		{   
+			echo "<script type='text/javascript'>alert('Registration successfully!')</script>";
 			$success = false;	    
 		}
 		else

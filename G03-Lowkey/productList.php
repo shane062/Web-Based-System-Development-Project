@@ -170,7 +170,6 @@
 
 		.headercontainer{
 			max-width: 1300px;
-			margin: auto;
 			padding-left: 25px;
 			padding-right: 25px;
 		}
@@ -369,6 +368,11 @@
 			display: inline-block;
 			font-size: 16px;
 		}
+
+		.topright{
+			position: absolute;
+			right: 0;
+		}
 	</style>
 </head>
 
@@ -409,7 +413,7 @@
 					</div>
 				</div>
 				
-				<nav>
+				<nav class="topright">
 					<ul>
 						<?php
 						   global $conn;

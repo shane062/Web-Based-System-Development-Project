@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 07, 2022 at 05:41 AM
--- Server version: 10.5.16-MariaDB
--- PHP Version: 7.3.32
+-- Host: 127.0.0.1
+-- Generation Time: Jan 08, 2023 at 05:05 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,7 +32,7 @@ CREATE TABLE `admin` (
   `adminUsername` varchar(255) NOT NULL,
   `adminPassword` varchar(255) NOT NULL,
   `logStatus` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -55,20 +54,20 @@ CREATE TABLE `product` (
   `productQty` int(11) NOT NULL,
   `productPrice` decimal(10,2) NOT NULL,
   `productIMG` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`productID`, `productName`, `productQty`, `productPrice`, `productIMG`) VALUES
-(1001, 'Electric ATV (Red)', 5, 8999.99, 'https://www.arngren.net/ATV-1.s10_1000watt_rotmetallic_seitevr.jpg'),
-(1002, 'Elektrisk-GoKart', 10, 8998.00, 'https://www.arngren.net/ATV-5.gokart_800_seitevr.jpg'),
-(1003, 'Elektrisk- Jeep & Golf-Bil', 8, 89998.00, 'https://www.arngren.net/Jeep.c6.jpg'),
-(1004, 'Electric T-Truck', 5, 119998.00, 'https://www.arngren.net/T-truck.jpg'),
-(1008, 'Electric Scooter', 6, 9099.99, 'https://arngren.net/sitebuilder/images/elsykkel-elsykkel9-600x375.jpg'),
-(1009, 'Electric Car', 16, 10599.99, 'https://www.arngren.net/sitebuilder/images/elbil-2-14-450x600.jpg'),
-(1014, 'Binocular T-300', 6, 549.99, 'https://www.arngren.net/sitebuilder/images/kikkert-71012-438x235.jpg');
+(1001, 'Electric ATV (Red)', 5, '8999.99', 'https://www.arngren.net/ATV-1.s10_1000watt_rotmetallic_seitevr.jpg'),
+(1002, 'Elektrisk-GoKart', 10, '8998.00', 'https://www.arngren.net/ATV-5.gokart_800_seitevr.jpg'),
+(1003, 'Elektrisk- Jeep & Golf-Bil', 8, '89998.00', 'https://www.arngren.net/Jeep.c6.jpg'),
+(1004, 'Electric T-Truck', 5, '119998.00', 'https://www.arngren.net/T-truck.jpg'),
+(1008, 'Electric Scooter', 6, '9099.99', 'https://arngren.net/sitebuilder/images/elsykkel-elsykkel9-600x375.jpg'),
+(1009, 'Electric Car', 16, '10599.99', 'https://www.arngren.net/sitebuilder/images/elbil-2-14-450x600.jpg'),
+(1014, 'Binocular T-300', 6, '549.99', 'https://www.arngren.net/sitebuilder/images/kikkert-71012-438x235.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,14 +89,14 @@ CREATE TABLE `transaction` (
   `state` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
   `zip` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `transaction`
 --
 
 INSERT INTO `transaction` (`orderID`, `userID`, `fullname`, `email`, `orderDate`, `orderTime`, `Qty`, `productName`, `total`, `address`, `state`, `city`, `zip`) VALUES
-(1, 1014, 'Wibu', 'wibumibu@smail.com\r\n', '2022-01-18', '13:42:45', 1, 'Electric ATV', 10998.99, 'Morgedalsvegen 23, 0378 Oslo, Norway', 'Østlandet', 'Oslo', 378);
+(1, 1014, 'Wibu', 'wibumibu@smail.com\r\n', '2022-01-18', '13:42:45', 1, 'Electric ATV', '10998.99', 'Morgedalsvegen 23, 0378 Oslo, Norway', 'Østlandet', 'Oslo', 378);
 
 -- --------------------------------------------------------
 
@@ -107,24 +106,23 @@ INSERT INTO `transaction` (`orderID`, `userID`, `fullname`, `email`, `orderDate`
 
 CREATE TABLE `user` (
   `userID` int(255) NOT NULL,
-  `firstName` varchar(255) NOT NULL,
-  `lastName` varchar(255) NOT NULL,
+  `fullName` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `logStatus` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`userID`, `firstName`, `lastName`, `password`, `email`, `logStatus`) VALUES
-(1000, 'Deba', 'Debaba', 'Debaba13@', 'debaba@smail.com', 0),
-(1013, 'Oya', 'Oyayo', 'Oyayo01@', 'oyayo01@smail.com', 0),
-(1014, 'Wibu', 'Mibu', 'Wibumibu13@', 'wibumibu@smail.com', 0),
-(1016, 'Yuubida', 'Bida', 'Yuubida31@', 'yuubida@smail.com', 0),
-(1028, 'Walaowe', 'Wowe', 'Walaowe13@', 'walaowe09@smail.com', 0),
-(1032, 'Asdas', 'Asadasa', 'Asdas13@', 'asdas@smail.com', 0);
+INSERT INTO `user` (`userID`, `fullName`, `password`, `email`, `logStatus`) VALUES
+(1000, 'Deba', 'Debaba13@', 'debaba@smail.com', 0),
+(1013, 'Oya', 'Oyayo01@', 'oyayo01@smail.com', 0),
+(1014, 'Wibu', 'Wibumibu13@', 'wibumibu@smail.com', 0),
+(1016, 'Yuubida', 'Yuubida31@', 'yuubida@smail.com', 0),
+(1028, 'Walaowe', 'Walaowe13@', 'walaowe09@smail.com', 0),
+(1032, 'Asdas', 'Asdas13@', 'asdas@smail.com', 0);
 
 --
 -- Indexes for dumped tables
@@ -181,7 +179,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1034;
+  MODIFY `userID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1041;
 
 --
 -- Constraints for dumped tables

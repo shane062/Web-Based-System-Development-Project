@@ -156,7 +156,6 @@
 
 		.headercontainer{
 			max-width: 1300px;
-			margin: auto;
 			padding-left: 25px;
 			padding-right: 25px;
 		}
@@ -356,6 +355,14 @@
 			font-size: 16px;
 		}
 
+		
+		.topright{
+			position: absolute;
+			right: 0;
+		}
+		
+		
+
 	</style>
 
 	<script src="https://use.fontawesome.com/59805f286a.js"></script>
@@ -368,20 +375,24 @@
 	<div class = "header">
 		<div class = "headercontainer">
 			<div class = "topnav">
-			<h1>www.ARNGREN.net</h1>
-				<div class = "centernav">
-					<ul>
-						<li><a class="" href="index.php">Home</a></li>
-						<li>|</li>
-						<li><a class="" href="productList.php">Products</a></li>
-						<li>|</li>
-						<li><a>About</a></li>
-					</ul>
+				<div class = "logo">
+					<img src = "arngrenlogo.PNG" width = "125px"  >
+				</div>
+
+				<div class="topcenter">
+					<h1>www.ARNGREN.net</h1>
+					<div class = "centernav">
+						<ul>
+							<li><a class="" href="index.php">Home</a></li>
+							<li>|</li>
+							<li><a class="" href="productList.php">Products</a></li>
+							<li>|</li>
+							<li><a>About</a></li>
+						</ul>
+					</div>
 				</div>
 				
-				<div class = "logo">
-					<img src = "arngrenlogo.PNG" width = "125px">
-				</div>
+				
 				
 				<div class = "searchbar">
 					<input type = "text" class = "search" placeholder = "Search for products..">
@@ -399,14 +410,14 @@
                     </div>
 				</div>
 				
-				<nav>
+				<nav class="topright">
 					<ul>
 						<?php
 						   global $conn;
 						   $sql = "SELECT fullName FROM user WHERE logStatus = 1;";
 						   $result = mysqli_query($conn, $sql);
-						
-						   if ($result -> num_rows > 0)
+						   
+						   if ($result !== false && $result -> num_rows > 0)
 						   {
 							  while ($row = $result -> fetch_assoc())
 							  {

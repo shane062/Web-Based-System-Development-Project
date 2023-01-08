@@ -5,6 +5,7 @@
 4. Set your PhpMyAdmin's hostname, username and password in **dbConnection_arngren.php** and **dbConnection_Product.php**.
 5. Activate Apache and MySQL in XAMPP.
 6. Try it.
+7. Easy access : http://localhost/Web-Based-System-Development-Project/G03-Lowkey/index.php
 
 ## Login Sample
 **User**

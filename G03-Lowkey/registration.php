@@ -1,9 +1,9 @@
 <?php
 	include 'dbConnection_arngren.php';
 	$fullName = $email = $password = $password2 = $fullNameError = $lnameError = $emailError = $phoneError = $passwordError = $password2Error ="";
-
+	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+		
 		if (isset($_POST['submit'])) {
 		
 		$fullName = $_POST['fullName'];
@@ -21,7 +21,7 @@
 			$fullNameError = "*First Name cannot be Blank!*";
             }
             else{
-            	if (!preg_match("/^([A-Z]){1}([a-z]){1,}$/", trim($fullName))) {
+            	if (!preg_match("/^([A-Z]+[a-zA-Z]*)(\s|\-)?([A-Z]+[a-zA-Z]*)?(\s|\-)?([A-Z]+[a-zA-Z]*)?$/", trim($fullName))) {
             	$fullNameError = "*First Character must be Uppercase and Follow by Lowercase!*";
             	}
             	if (preg_match($number,trim($fullName))) {
@@ -53,6 +53,7 @@
 				die("Connection Failed : ". $conn->connect_error);
 				} else {*/
 				addAccount($fullName, $email, $password);
+				
 				$container = "hidden";
 				$after = "visible";
 				header("location: loginUser.php");
@@ -65,6 +66,7 @@
 <head>
 	<title>Arngren | Registration</title>
 	<link rel="icon" type="image/x-icon" href="arngrenlogo.PNG">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style type="text/css">
 		.header{
 			display: flex;
@@ -294,14 +296,14 @@
 			visibility: <?=$after?>;
 		}
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 	</style>
 </head>
 <body>
 	<div class="header">
 
 		<div class="logo">
-			<img src = "arngrenlogo.PNG" alt="logo" >
+		<a href="index.php"><img src = "arngrenlogo.PNG" alt="logo" ></a>
 		</div>
 		<div class="logotext">
 			<h1>www.Arngren.net</h1>
@@ -335,13 +337,13 @@
 				</div>
 				</div>
 				<div class="innerform">
-				<input type="text" placeholder="Password" id="password" name="password" required>
+				<input type="password" placeholder="Password" id="password" name="password" required>
 				<div class="errorblock">
 				<small class="error"> <?php echo $passwordError;?></small>
 				</div>
 				</div>
 				<div class="innerform">
-				<input type="text" placeholder="Confirm Password" id="password2" name="password2" required>
+				<input type="password" placeholder="Confirm Password" id="password2" name="password2" required>
 				<div class="errorblock">
 				<small class="error"> <?php echo $password2Error;?></small>
 				</div>

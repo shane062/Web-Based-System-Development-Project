@@ -3,7 +3,7 @@
 	session_start();
 		//if user is not logged//
 		if (!isset($_SESSION["userID"])) {
-			header("Location : index.php");
+			header("location: index.php");
 		}
 		include 'logoutUser.php';
 
@@ -87,6 +87,7 @@
 <html lang = "en">
 <head>
 	<meta charset = "UTF-8">
+	
 	<title>Arngren | Edit Profile</title>
 	<style type="text/css">
 		*{
@@ -427,7 +428,7 @@
 			<div class = "bottomnav">
 				<img src = "arrowleft.png">
 				<a>Scooter</a> 
-				<a>Jeep</a> 
+				<a>iieep</a> 
 				<a>Electric Vehicles</a>
 				<a>DVD-Player</a>
 				<a>Go-Kart</a> 
@@ -455,12 +456,12 @@
 				?>
 				<div class="innerform">
 					<label>Full Name</label>
-					<input type="text" placeholder="<? php echo $_row['fullName'] ?>" id="name">
+					<input type="text" placeholder="<?php echo $_row['fullName'] ?>" id="name">
 					<small class="error"> <?php echo $fullNameError;?></small>
 				</div>
 				<div class="innerform">
 					<label>Email</label>
-					<input type="email" placeholder="<? php echo $_row['email'] ?>" id="email">
+					<input type="email" placeholder="<?php echo $_row['email'] ?>" id="email">
 					<small class="error"> <?php echo $emailError;?></small>
 				</div>
 				<div class="innerform">

@@ -188,7 +188,7 @@
 <body>
 	<div class="header">
 		<div class="logo">
-			<img src = "arngrenlogo.PNG" alt="logo" >
+		<a href="index.php"><img src = "arngrenlogo.PNG" alt="logo" ></a>
 		</div>
 		<div class="logotext">
 			<h1>www.Arngren.net</h1>

@@ -188,7 +188,6 @@
 
 		.headercontainer{
 			max-width: 1300px;
-			margin: auto;
 			padding-left: 25px;
 			padding-right: 25px;
 		}
@@ -288,6 +287,11 @@
 			color: #ecd846;
 			text-decoration: none;
 		}
+
+		.topright{
+			position: absolute;
+			right: 0;
+		}
 	</style>
 </head>
 
@@ -296,6 +300,7 @@
 		<div class = "headercontainer">
 			<div class = "topnav">
 			<h1>www.ARNGREN.net</h1>
+			
 				<div class = "centernav">
 					<ul>
 						<li><a href="productList.php"><i class = "fa fa-arrow-left"></i> Continue Browsing</a></li>
@@ -311,7 +316,7 @@
 					<h2>Shopping Cart <i class = "fa fa-shopping-cart"></i></h2>
 				</div>
 				
-				<nav>
+				<nav class="topright">
 					<ul>
 						<?php
 						   global $conn;
