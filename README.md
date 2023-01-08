@@ -8,9 +8,13 @@
 7. Easy access : http://localhost/Web-Based-System-Development-Project/G03-Lowkey/index.php
 
 ## Login Sample
-**User**
+**User_1**
 - Email: wibumibu@smail.com	
 - Password: Wibumibu13@
+
+**User_2**
+- Email: oyayo01@smail.com
+- Password: Oyayo01@
 
 **Admin**
 - Username: admin
