@@ -1,4 +1,4 @@
-# Steps
+# User Manual
 1. Create a new datebase named **db_arngren** in PhpMyAdmin 
 2. Import the sql file into your PhpMyAdmin
 3. Put the folder in your computer htdocs folder
